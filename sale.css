@@ -1729,7 +1729,7 @@ th {
 
 .customer_details_inv_details {
   width: 97%;
-  height: 290px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -1759,7 +1759,7 @@ th {
   font-size: 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #eef4ff;
+  background-color: #efefef;
 }
 
 .cutomer_detail_t {
@@ -1781,7 +1781,7 @@ th {
 .customer_phone label,
 .customer_email label,
 .customer_address label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: #6d6b7c;
   padding-left: 10px;
@@ -1791,13 +1791,22 @@ th {
 .customer_phone_inp,
 .customer_email_inp,
 .customer_address_inp {
-  width: 260px;
+  width: 175px;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #d9d6de;
   padding-left: 10px;
   outline: none;
   color: #6e6b7c;
+}
+
+.customer_name_inp::placeholder,
+.customer_phone_inp::placeholder,
+.customer_email_inp::placeholder,
+.customer_address_inp::placeholder {
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .customer_document_sec {
@@ -1841,6 +1850,7 @@ th {
   color: #6e6b7c;
   font-size: 13px;
 }
+
 
 .old_exc_item_name {
   width: 180px;
@@ -1974,7 +1984,7 @@ th {
 }
 
 .add_item_inp {
-  width: 250px;
+  width: 180px;
   height: 40px;
   border-radius: 5px;
   border: 1px solid #d9d6de;
@@ -1990,13 +2000,31 @@ th {
   padding-left: 10px;
 }
 
+.add_item_loc {
+  width: 110px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #d9d6de;
+  padding-left: 10px;
+  outline: none;
+  color: #6e6b7c;
+  font-size: 13px;
+}
 
 
+.add_item_loc::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
+}
 
 
+.add_item_inp::placeholder {
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
 
-
-
+}
 
 
 
@@ -3229,7 +3257,7 @@ td img {
     position: fixed;
     top: 0;
     right: -600px;
-    width: 581px;
+    width: 519px;
     height: 100vh;
     background: white;
     border-left: 2px solid #ddd;
@@ -3272,11 +3300,15 @@ td img {
 
 .gold-filter {
   width: 100%;
+  height: 60px;
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-left: 10px;
-  padding: 10px 0;
+  justify-content: space-between;
+  
+}
+.form{
+  margin-left: 5px;
 }
 
 .gold-filter label {
@@ -3311,6 +3343,7 @@ td img {
     font-size: 12px;
     font-weight: 400;
     position: sticky;
+    border: none;
     top: 0;
 }
 
@@ -3327,8 +3360,12 @@ td img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 50px;
   border: 1px solid #dfdfdf;
+}
+.form ,.to{
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .gold-sale-table-body tr td {
@@ -3388,8 +3425,7 @@ td img {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.192);
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -3468,4 +3504,12 @@ margin-bottom: 15px;
       transform: translateY(0);
       opacity: 1;
   }
+}
+
+
+.gold-sale-table-head{
+  border: none;
+}
+.gold-sale-table-row{
+  border: none;
 }
