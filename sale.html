@@ -197,7 +197,7 @@
       <!-- dashboard widget start from here -->
       <div class="sale_container">
         <div class="sale_box total_sale" onclick="openPopup('todaySalePopup')">
-          <span class="sale_tittle">Total Sale</span>
+          <span class="sale_tittle">Daily Sale</span>
           <div class="sale_l_icon">
             <img src="/image/svg.png" alt="" class="pos-ico">
           </div>
@@ -206,7 +206,7 @@
           </span>
         </div>
         <div class="sale_box paid_sale" onclick="openPopup('goldPopup')">
-          <span class="sale_tittle">Total Old Gold Exchange</span>
+          <span class="sale_tittle"> Old Gold Exchange</span>
           <div class="sale_l_icon">
             <img src="/image/gold-bar.png" alt="" class="pos-ico">
           </div>
@@ -216,7 +216,7 @@
         </div>
 
         <div class="sale_box total_profit" onclick="openPopup('silverPopup')">
-          <span class="sale_tittle">Total Old Silver Exchange</span>
+          <span class="sale_tittle"> Old Silver Exchange</span>
           <div class="sale_l_icon">
             <img src="/image/silver-bar.png" alt="" class="pos-ico">
           </div>
@@ -225,7 +225,7 @@
           </span>
         </div>
         <div class="sale_box total_profit" onclick="openPopup('silverPopup')">
-          <span class="sale_tittle">Total Old Stone Exchange</span>
+          <span class="sale_tittle">Old Stone Exchange</span>
           <div class="sale_l_icon">
             <img src="/image/ruby.png" alt="" class="pos-ico">
           </div>
@@ -712,6 +712,7 @@
                 <td><input type="checkbox"></td>
                 <td>2024-09-01</td>
                 <td>INV01024</td>
+
                 <td>BDAS & SON KP</td>
                 <td>Aman singh</td>
                 <td>6290166020</td>
@@ -1171,7 +1172,7 @@
                 <div class="customer_detail_tittel">
                   <h2 class="cutomer_detail_t">Exchange Details</h2>
                 </div>
-                <div class="old_gold_pannel">
+                <div class="old_gold_pannel"> 
                   <div class="customer_phone">
                     <select id="states" class="old_exchange_select">
                       <option value="">Type</option>
@@ -1211,7 +1212,7 @@
                     <input type="text" id="customer_email" class="old_exc_amount" placeholder="Enter Amount">
                   </div>
                   <div class="customer_email">
-                    <img src="/image/plus.png" alt="" class="add_old_exc">
+                    <img src="/image/sheet.png" alt="" class="add_old_exc">
                   </div>
                 </div>
                 <div class="old_gold_pannel">
@@ -1254,7 +1255,7 @@
                     <input type="text" id="customer_email" class="old_exc_amount" placeholder="Enter Amount">
                   </div>
                   <div class="customer_email">
-                    <img src="/image/minus-button.png" alt="" class="add_old_exc">
+                    <img src="/image/trash.png" alt="" class="add_old_exc">
                   </div>
                 </div>
               </div>
@@ -1522,7 +1523,7 @@
       <div class="card-right-popup" id="todaySalePopup">
         <div class="card-popup-header">
           <span class="monthly_sale_tittle">
-            Total Sale
+            Daily Sale
           </span>
           <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
         </div>
@@ -1696,18 +1697,20 @@
 
       <div class="gold-popup" id="goldPopup">
         <div class="gold-popup-header">
-          <span class="gold-popup-title">Total Old Gold Exchange</span>
+          <span class="gold-popup-title">Old Gold Exchange</span>
           <i class="fi fi-rr-cross-small gold-close-btn" onclick="closeGoldPopup()"></i>
         </div>
         <div class="gold-popup-content">
           <div class="gold-filter">
-            <div class="form">
-              <label for="goldFromDate">From:</label>
-              <input type="date" id="goldFromDate">
-            </div>
-            <div class="to">
-              <label for="goldToDate">To:</label>
-             <input type="date" id="goldToDate">
+            <div class="date_filter_cont">
+              <div class="form">
+                <label for="goldFromDate">From:</label>
+                <input type="date" id="goldFromDate">
+              </div>
+              <div class="to">
+                <label for="goldToDate">To:</label>
+               <input type="date" id="goldToDate">
+              </div>
             </div>
             <button class="goldassign-btn" id="goldassign"><i class="fi fi-sr-layers" id="goldassign"></i> Assign Item</button>
           </div>
@@ -1716,13 +1719,29 @@
 
             <div id="assignModal" class="goldmodal">
               <div class="goldmodal-content">
-                  <span class="goldclose">&times;</span>
-                  <h3 class="goldh3">Item Assignment</h3>
-                  <p>This item is assigning from <b>Sale</b> to <b>Refining</b>.</p>
-                  
+                   <div class="goldmodal_head">
+                      <div class="goldmodal-title">Old Gold Assignment</div>
+                      <i class="fi fi-rr-cross-small card-close-btn goldclose" ></i>
+                   </div>
+                    <div class="info_log">
+                      <span class="exch_warn">
+                        <i class="fi fi-ss-triangle-warning" id="exch_warn"></i>
+                        Once assigned, you cannot unassign the old gold.
+                      </span>
+                    </div>
+                   <div class="old_gld_exc_from_cont">
+                    <div class="old_gld_exc_to">
+                      <span class="exc_assign_titl">Assign Old Gold To :</span>
+                      <select id="oldGoldExchangeTo" class="old_exchange_select">
+                        <option value="">Refineary</option>
+                      </select>
+                    </div>
+                   </div>
                   <div class="modal-buttons">
+                    <div class="btn-cnt">
                       <button id="confirmBtn" class="goldbtn confirm">Confirm</button>
                       <button id="cancelBtn" class="goldbtn cancel">Cancel</button>
+                    </div>
                   </div>
               </div>
           </div>
@@ -1737,6 +1756,7 @@
                   <th>Item Name</th>
                   <th>Weight</th>
                   <th>Amount (₹)</th>
+                  <th>Location</th>
                 </tr>
               </thead>
               <tbody class="gold-sale-table-body">
@@ -1748,6 +1768,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>sale</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1757,6 +1778,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>sale</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1766,6 +1788,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1775,6 +1798,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1784,6 +1808,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1793,6 +1818,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1802,6 +1828,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1811,6 +1838,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1820,6 +1848,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1829,6 +1858,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1838,6 +1868,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1847,6 +1878,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1856,6 +1888,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
                 <tr class="gold-sale-row">
                   <td><input type="checkbox"></td>
@@ -1865,6 +1898,7 @@
                   <td>Round ring</td>
                   <td>1.2gm</td>
                   <td>5,00,000</td>
+                  <td>Refine</td>
                 </tr>
 
               </tbody>
