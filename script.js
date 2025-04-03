@@ -150,32 +150,32 @@ document.addEventListener("DOMContentLoaded", function () {
   toDate.setAttribute("max", today);
 
   fromDate.addEventListener("change", function () {
-      toDate.setAttribute("min", fromDate.value);
-      filterTable();
+    toDate.setAttribute("min", fromDate.value);
+    filterTable();
   });
 
   toDate.addEventListener("change", function () {
-      fromDate.setAttribute("max", toDate.value);
-      filterTable();
+    fromDate.setAttribute("max", toDate.value);
+    filterTable();
   });
 
   function filterTable() {
-      const from = fromDate.value ? new Date(fromDate.value) : null;
-      const to = toDate.value ? new Date(toDate.value) : null;
+    const from = fromDate.value ? new Date(fromDate.value) : null;
+    const to = toDate.value ? new Date(toDate.value) : null;
 
-      tableRows.forEach(row => {
-          const dateText = row.cells[0].innerText;
-          const rowDate = new Date(dateText.split("-").reverse().join("-"));
+    tableRows.forEach(row => {
+      const dateText = row.cells[0].innerText;
+      const rowDate = new Date(dateText.split("-").reverse().join("-"));
 
-          if (
-              (from && rowDate < from) || 
-              (to && rowDate > to)
-          ) {
-              row.style.display = "none";
-          } else {
-              row.style.display = "";
-          }
-      });
+      if (
+        (from && rowDate < from) ||
+        (to && rowDate > to)
+      ) {
+        row.style.display = "none";
+      } else {
+        row.style.display = "";
+      }
+    });
   }
 });
 
@@ -189,28 +189,88 @@ document.addEventListener("DOMContentLoaded", function () {
   var cancelBtn = document.getElementById("cancelBtn");
 
   btn.onclick = function () {
-      modal.style.display = "block";
+    modal.style.display = "block";
   };
 
   closeBtn.onclick = function () {
-      modal.style.display = "none";
+    modal.style.display = "none";
   };
 
   confirmBtn.onclick = function () {
-      alert("Item successfully assigned!");
-      modal.style.display = "none";
+    alert("Item successfully assigned!");
+    modal.style.display = "none";
   };
 
   cancelBtn.onclick = function () {
-      modal.style.display = "none";
+    modal.style.display = "none";
   };
-  
+
   window.onclick = function (event) {
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
   };
 });
+
+
+// assign item total old silver
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("silverassignModal");
+  var btn = document.getElementById("silverassign");
+  var closeBtn = document.querySelector(".silverclose");
+  var confirmBtn = document.getElementById("confirmSilverBtn");
+  var cancelBtn = document.getElementById("cancelSilverBtn");
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  confirmBtn.onclick = function () {
+    alert("Old Silver successfully assigned!");
+    modal.style.display = "none";
+  };
+  cancelBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+});
+
+// assign item total old stone
+
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("stoneassignModal");
+  var btn = document.getElementById("stoneassign");
+  var closeBtn = document.querySelector(".stoneclose");
+  var confirmBtn = document.getElementById("confirmStoneBtn");
+  var cancelBtn = document.getElementById("cancelStoneBtn");
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  confirmBtn.onclick = function () {
+    alert("Old Stone successfully assigned!");
+    modal.style.display = "none";
+  };
+  cancelBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+});
+
 
 
 // POS create invoice popup and actions
@@ -360,6 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // edit view return pop up
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll("#Edit_Invoice_btn, #View_Invoice_btn, #Return_Invoice_btn");
   const popups = {
@@ -367,16 +428,21 @@ document.addEventListener("DOMContentLoaded", function () {
     "View_Invoice_btn": document.getElementById("view_invoice_popup"),
     "Return_Invoice_btn": document.getElementById("return_invoice_popup")
   };
-  const backButtons = document.querySelectorAll(".back_icon_edit, .back_icon_view, .back_icon_return");
+
   function showPopup(popup) {
     document.querySelectorAll(".edit_inv_cont, .view_inv_cont, .return_inv_cont")
-      .forEach(p => p.style.display = "none");
-    if (popup) popup.style.display = "flex";
+      .forEach(p => p.classList.remove("active"));
+
+    if (popup) popup.classList.add("active");
   }
 
-  function hidePopup(popup) {
-    if (popup) popup.style.display = "none";
+  function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.remove("active");
+    }
   }
+
   buttons.forEach(button => {
     button.addEventListener("click", function (event) {
       event.preventDefault();
@@ -384,13 +450,17 @@ document.addEventListener("DOMContentLoaded", function () {
       showPopup(popup);
     });
   });
-  backButtons.forEach(button => {
+
+  document.querySelectorAll(".close_popup").forEach(button => {
     button.addEventListener("click", function () {
-      const popup = button.closest(".edit_inv_cont, .view_inv_cont, .return_inv_cont");
-      hidePopup(popup);
+      const popup = this.closest(".edit_inv_cont, .view_inv_cont, .return_inv_cont");
+      if (popup) {
+        popup.classList.remove("active");
+      }
     });
   });
 });
+
 
 // Total old gold exchange
 
@@ -401,3 +471,24 @@ function openGoldPopup() {
 function closeGoldPopup() {
   document.getElementById("goldPopup").style.right = "-600px";
 }
+
+// Total old silver exchange
+
+function openSilverPopup() {
+  document.getElementById("silverPopup").style.right = "0";
+}
+
+function closeSilverPopup() {
+  document.getElementById("silverPopup").style.right = "-600px";
+}
+
+// Total old stone exchange
+
+function openStonePopup() {
+  document.getElementById("stonePopup").style.right = "0";
+}
+
+function closeStonePopup() {
+  document.getElementById("stonePopup").style.right = "-600px";
+}
+

@@ -215,7 +215,7 @@
           </span>
         </div>
 
-        <div class="sale_box total_profit" onclick="openPopup('silverPopup')">
+        <div class="sale_box total_profit sale_box paid_sale" onclick="openPopup('silverPopup')">
           <span class="sale_tittle"> Old Silver Exchange</span>
           <div class="sale_l_icon">
             <img src="/image/silver-bar.png" alt="" class="pos-ico">
@@ -224,7 +224,7 @@
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
           </span>
         </div>
-        <div class="sale_box total_profit" onclick="openPopup('silverPopup')">
+        <div class="sale_box total_profit" onclick="openPopup('stonePopup')">
           <span class="sale_tittle">Old Stone Exchange</span>
           <div class="sale_l_icon">
             <img src="/image/ruby.png" alt="" class="pos-ico">
@@ -1172,7 +1172,7 @@
                 <div class="customer_detail_tittel">
                   <h2 class="cutomer_detail_t">Exchange Details</h2>
                 </div>
-                <div class="old_gold_pannel"> 
+                <div class="old_gold_pannel">
                   <div class="customer_phone">
                     <select id="states" class="old_exchange_select">
                       <option value="">Type</option>
@@ -1217,7 +1217,7 @@
                 </div>
                 <div class="old_gold_pannel">
                   <div class="customer_phone">
-                    <select  class="old_exchange_select">
+                    <select class="old_exchange_select">
                       <option value="">Type</option>
                       <option value="">Gold</option>
                       <option value="">Silver</option>
@@ -1225,7 +1225,7 @@
                     </select>
                   </div>
                   <div class="customer_phone">
-                    <select  class="old_exchange_select">
+                    <select class="old_exchange_select">
                       <option value=""> Destination</option>
                       <option value="">Old Gold</option>
                       <option value="">Old Silver</option>
@@ -1376,32 +1376,15 @@
           </div>
         </div>
       </div>
-
       <!-- Edit Invoice -->
       <div class="edit_inv_cont" id="edit_invoice_popup">
         <div class="dashboard_header">
           <div class="title_btn_cont">
             <span class="dashboard_name">EDIT SALE INVOICE</span>
           </div>
-          <div class="sale_option">
-            <a href="" class="rp_button"><box-icon name="pie-chart-alt-2" type="solid" color="#353c4a"></box-icon>Daily
-              Report</a>
-            <a href="" class="sp_button"><box-icon name="message-dots" type="solid" color="#353c4a"></box-icon>Chat
-              Support</a>
-            <a href="" class="st_button"><box-icon name="cog" type="solid" color="#353c4a"
-                class="setting"></box-icon></a>
-            <a href="" class="sc_button keyboard-icon" onclick="openShortcutPanel(event)"
-              aria-label="Open keyboard shortcuts panel"><box-icon name="keyboard" type="solid"
-                color="#353c4a"></box-icon></a>
-          </div>
+          <button class="close_popup">&times;</button>
         </div>
-        <div class="edit_inv_feild_cont">
-          <div class="btn_cont_inv">
-            <button class="back_icon_edit"><i class="fi fi-br-arrow-left" id="bk_ico"></i>Go Back</button>
-            <div class="inv_cont_fld">
-            </div>
-          </div>
-        </div>
+        <div class="edit_inv_feild_cont"></div>
       </div>
 
       <!-- View Invoice -->
@@ -1410,49 +1393,22 @@
           <div class="title_btn_cont">
             <span class="dashboard_name">VIEW SALE INVOICE</span>
           </div>
-          <div class="sale_option">
-            <a href="" class="rp_button"><box-icon name="pie-chart-alt-2" type="solid" color="#353c4a"></box-icon>Daily
-              Report</a>
-            <a href="" class="sp_button"><box-icon name="message-dots" type="solid" color="#353c4a"></box-icon>Chat
-              Support</a>
-            <a href="" class="st_button"><box-icon name="cog" type="solid" color="#353c4a"
-                class="setting"></box-icon></a>
-            <a href="" class="sc_button keyboard-icon" onclick="openShortcutPanel(event)"
-              aria-label="Open keyboard shortcuts panel"><box-icon name="keyboard" type="solid"
-                color="#353c4a"></box-icon></a>
-          </div>
+          <button class="close_popup">&times;</button>
         </div>
-        <div class="view_inv_feild_cont">
-          <div class="btn_cont_inv">
-            <button class="back_icon_view"><i class="fi fi-br-arrow-left" id="bk_ico"></i>Go Back</button>
-          </div>
-        </div>
+        <div class="view_inv_feild_cont"></div>
       </div>
 
-      <!-- return sale invoice -->
+      <!-- Return Invoice -->
       <div class="return_inv_cont" id="return_invoice_popup">
         <div class="dashboard_header">
           <div class="title_btn_cont">
             <span class="dashboard_name">RETURN SALE INVOICE</span>
           </div>
-          <div class="sale_option">
-            <a href="" class="rp_button"><box-icon name="pie-chart-alt-2" type="solid" color="#353c4a"></box-icon>Daily
-              Report</a>
-            <a href="" class="sp_button"><box-icon name="message-dots" type="solid" color="#353c4a"></box-icon>Chat
-              Support</a>
-            <a href="" class="st_button"><box-icon name="cog" type="solid" color="#353c4a"
-                class="setting"></box-icon></a>
-            <a href="" class="sc_button keyboard-icon" onclick="openShortcutPanel(event)"
-              aria-label="Open keyboard shortcuts panel"><box-icon name="keyboard" type="solid"
-                color="#353c4a"></box-icon></a>
-          </div>
+          <button class="close_popup">&times;</button>
         </div>
-        <div class="return_inv_feild_cont">
-          <div class="btn_cont_inv">
-            <button class="back_icon_return"><i class="fi fi-br-arrow-left" id="bk_ico"></i>Go Back</button>
-          </div>
-        </div>
+        <div class="return_inv_feild_cont"></div>
       </div>
+
 
       <!-- Invoice History -->
       <div class="invoice-popup-overlay" id="invoicePopupContainer">
@@ -1709,41 +1665,42 @@
               </div>
               <div class="to">
                 <label for="goldToDate">To:</label>
-               <input type="date" id="goldToDate">
+                <input type="date" id="goldToDate">
               </div>
             </div>
-            <button class="goldassign-btn" id="goldassign"><i class="fi fi-sr-layers" id="goldassign"></i> Assign Item</button>
+            <button class="goldassign-btn" id="goldassign"><i class="fi fi-sr-layers" id="goldassign"></i> Assign
+              Item</button>
           </div>
-          
-            <!-- Assign Item Button -->
 
-            <div id="assignModal" class="goldmodal">
-              <div class="goldmodal-content">
-                   <div class="goldmodal_head">
-                      <div class="goldmodal-title">Old Gold Assignment</div>
-                      <i class="fi fi-rr-cross-small card-close-btn goldclose" ></i>
-                   </div>
-                    <div class="info_log">
-                      <span class="exch_warn">
-                        <i class="fi fi-ss-triangle-warning" id="exch_warn"></i>
-                        Once assigned, you cannot unassign the old gold.
-                      </span>
-                    </div>
-                   <div class="old_gld_exc_from_cont">
-                    <div class="old_gld_exc_to">
-                      <span class="exc_assign_titl">Assign Old Gold To :</span>
-                      <select id="oldGoldExchangeTo" class="old_exchange_select">
-                        <option value="">Refineary</option>
-                      </select>
-                    </div>
-                   </div>
-                  <div class="modal-buttons">
-                    <div class="btn-cnt">
-                      <button id="confirmBtn" class="goldbtn confirm">Confirm</button>
-                      <button id="cancelBtn" class="goldbtn cancel">Cancel</button>
-                    </div>
-                  </div>
+          <!-- Assign Item Button -->
+
+          <div id="assignModal" class="goldmodal">
+            <div class="goldmodal-content">
+              <div class="goldmodal_head">
+                <div class="goldmodal-title">Old Gold Assignment</div>
+                <i class="fi fi-rr-cross-small card-close-btn goldclose"></i>
               </div>
+              <div class="info_log">
+                <span class="exch_warn">
+                  <i class="fi fi-ss-triangle-warning" id="exch_warn"></i>
+                  Once assigned, you cannot unassign the old gold.
+                </span>
+              </div>
+              <div class="old_gld_exc_from_cont">
+                <div class="old_gld_exc_to">
+                  <span class="exc_assign_titl">Assign Old Gold To :</span>
+                  <select id="oldGoldExchangeTo" class="old_exchange_select">
+                    <option value="">Refineary</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-buttons">
+                <div class="btn-cnt">
+                  <button id="confirmBtn" class="goldbtn confirm">Confirm</button>
+                  <button id="cancelBtn" class="goldbtn cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="gold-scroll-content">
             <table class="gold-sale-table">
@@ -1915,29 +1872,467 @@
 
       <!-- Total Old Silver Exchange card -->
 
-      <div class="card-right-popup" id="silverPopup">
-        <div class="card-popup-header">
-          <span class="monthly_sale_tittle">
-            Total Old Silver Exchange
-          </span>
-          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+      <div class="silver-popup" id="silverPopup">
+        <div class="silver-popup-header">
+          <span class="silver-popup-title">Old Silver Exchange</span>
+          <i class="fi fi-rr-cross-small silver-close-btn" onclick="closeSilverPopup()"></i>
         </div>
-        <div class="card-popup-content">
-          <p>Total Old Silver Exchange content data</p>
+        <div class="silver-popup-content">
+          <div class="silver-filter">
+            <div class="date_filter_cont">
+              <div class="form">
+                <label for="silverFromDate">From:</label>
+                <input type="date" id="silverFromDate">
+              </div>
+              <div class="to">
+                <label for="silverToDate">To:</label>
+                <input type="date" id="silverToDate">
+              </div>
+            </div>
+            <button class="silverassign-btn" id="silverassign">
+              <i class="fi fi-sr-layers"></i> Assign Item
+            </button>
+          </div>
+
+          <!-- Assign Item Modal -->
+          <div id="silverassignModal" class="silvermodal">
+            <div class="silvermodal-content">
+              <div class="silvermodal-head">
+                <div class="silvermodal-title">Old Silver Assignment</div>
+                <i class="fi fi-rr-cross-small card-close-btn silverclose"></i>
+              </div>
+              <div class="info_log">
+                <span class="exch_warn">
+                  <i class="fi fi-ss-triangle-warning" id="exch_warn"></i>
+                  Once assigned, you cannot unassign the old silver.
+                </span>
+              </div>
+              <div class="old_silver_exc_from_cont">
+                <div class="old_silver_exc_to">
+                  <span class="exc_assign_titl">Assign Old Silver To:</span>
+                  <select id="oldSilverExchangeTo" class="old_exchange_select">
+                    <option value="">Refinery</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-buttons">
+                <div class="btn-cnt">
+                  <button id="confirmSilverBtn" class="silverbtn confirm">Confirm</button>
+                  <button id="cancelSilverBtn" class="silverbtn cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="silver-scroll-content">
+            <table class="silver-sale-table">
+              <thead class="silver-sale-table-head">
+                <tr class="silver-sale-table-row">
+                  <th><input type="checkbox"></th>
+                  <th>Invoice Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Weight</th>
+                  <th>Amount (₹)</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody class="silver-sale-table-body">
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Sale</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="silver-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="silver-summary">
+            <div class="silver-total-amount">
+              <span>Total Amount: ₹1,00,00,000</span>
+            </div>
+            <button class="silver-load-more">Load More</button>
+          </div>
         </div>
       </div>
 
-      <!-- Total Return Invoice card -->
 
-      <div class="card-right-popup" id="returnPopup">
-        <div class="card-popup-header">
-          <span class="monthly_sale_tittle">
-            Total Return Invoice
-          </span>
-          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+
+      <!-- Total Old Stone Exchange card -->
+
+      <div class="stone-popup" id="stonePopup">
+        <div class="stone-popup-header">
+          <span class="stone-popup-title">Old Stone Exchange</span>
+          <i class="fi fi-rr-cross-small stone-close-btn" onclick="closeStonePopup()"></i>
         </div>
-        <div class="card-popup-content">
-          <p>Total Return Invoice content data</p>
+        <div class="stone-popup-content">
+          <div class="stone-filter">
+            <div class="date_filter_cont">
+              <div class="form">
+                <label for="stoneFromDate">From:</label>
+                <input type="date" id="stoneFromDate">
+              </div>
+              <div class="to">
+                <label for="stoneToDate">To:</label>
+                <input type="date" id="stoneToDate">
+              </div>
+            </div>
+            <button class="stoneassign-btn" id="stoneassign">
+              <i class="fi fi-sr-layers"></i> Assign Item
+            </button>
+          </div>
+
+          <!--stone Assign Item Modal -->
+          <div id="stoneassignModal" class="stonemodal">
+            <div class="stonemodal-content">
+              <div class="stonemodal-head">
+                <div class="stonemodal-title">Old Stone Assignment</div>
+                <i class="fi fi-rr-cross-small card-close-btn stoneclose"></i>
+              </div>
+              <div class="info_log">
+                <span class="exch_warn">
+                  <i class="fi fi-ss-triangle-warning" id="exch_warn"></i>
+                  Once assigned, you cannot unassign the old stone.
+                </span>
+              </div>
+              <div class="old_stone_exc_from_cont">
+                <div class="old_stone_exc_to">
+                  <span class="exc_assign_titl">Assign Old Stone To:</span>
+                  <select id="oldStoneExchangeTo" class="old_exchange_select">
+                    <option value="">Refinery</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-buttons">
+                <div class="btn-cnt">
+                  <button id="confirmStoneBtn" class="stonebtn confirm">Confirm</button>
+                  <button id="cancelStoneBtn" class="stonebtn cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stone-scroll-content">
+            <table class="stone-sale-table">
+              <thead class="stone-sale-table-head">
+                <tr class="stone-sale-table-row">
+                  <th><input type="checkbox"></th>
+                  <th>Invoice Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Weight</th>
+                  <th>Amount (₹)</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody class="stone-sale-table-body">
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Sale</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+                <tr class="stone-sale-row">
+                  <td><input type="checkbox"></td>
+                  <td>28-02-2025</td>
+                  <td>INV0003</td>
+                  <td>Aman Singh</td>
+                  <td>Round ring</td>
+                  <td>1.2gm</td>
+                  <td>5,00,000</td>
+                  <td>Refine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="stone-summary">
+            <div class="stone-total-amount">
+              <span>Total Amount: ₹1,00,00,000</span>
+            </div>
+            <button class="stone-load-more">Load More</button>
+          </div>
         </div>
       </div>
 
