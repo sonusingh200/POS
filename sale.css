@@ -1454,6 +1454,9 @@ th {
 .pos-ico {
   width: 25px;
 }
+.pos-ico-daily_sale{
+  width: 22px;
+}
 
 #pos_odr {
   position: relative;
@@ -1635,7 +1638,7 @@ th {
 
 .btn_cont_inv {
   width: 97%;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1644,7 +1647,43 @@ th {
 
 .inv_cont_fld {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  border: 1px solid #d9d6de;
+}
+
+.staff_feild , .counter_feild {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.sales_exe{
+  width: 180px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #d9d6de;
+  padding-left: 10px;
+  outline: none;
+  color: #6e6b7c;
+  font-size: 13px;
+  font-weight: 400;
+}
+.Counter_feild{
+  width: 140px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #d9d6de;
+  padding-left: 10px;
+  outline: none;
+  color: #6e6b7c;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .inv_date_cont,
@@ -1655,9 +1694,10 @@ th {
 }
 
 .inv_number_cont label,
-.inv_date_cont label {
-  font-size: 13px;
+.inv_date_cont label , .sales_exe_tittle {
+  font-size: 12px;
   padding-left: 5px;
+  color: #6d6b7d;
 }
 
 .inv_date {
@@ -1994,7 +2034,7 @@ th {
 }
 
 .add_item_tiitle {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: #6d6b7c;
   padding-left: 10px;
@@ -2537,7 +2577,10 @@ td img {
   top: 1px;
   font-size: 15px;
 }
-
+.custom-history-invoice{
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
 #inv_hist {
   position: relative;
   top: 1.5px;
@@ -2657,8 +2700,8 @@ td img {
 
 .invoice-popup-title {
   margin: 0;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .invoice-popup-close {
@@ -2693,8 +2736,8 @@ td img {
 }
 
 .invoice-popup-table thead th {
-  background: rgb(199, 224, 255);
-  color: black;
+  background-color: #353c4a;
+  color: white;
 }
 
 .invoice-popup-table tbody tr:nth-child(odd) {
@@ -3018,15 +3061,6 @@ td img {
   justify-content: space-between;
 }
 
-.view_all_monthly_sale {
-  height: 40px;
-  width: 140px;
-  margin-right: 10px;
-  border-radius: 6px;
-  outline: none;
-  border: 1px solid #d9d6de;
-}
-
 /*****import data****/
 .importdata-confirm-overlay {
   display: none;
@@ -3191,18 +3225,17 @@ td img {
 /* Edit view return pop up */
 
 .edit_inv_cont,
-.view_inv_cont,
-.return_inv_cont {
-  width: 550px;
+.view_inv_cont{
+  width: 450px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 0;
-  right: -550px;
+  right: -650px;
   background-color: rgb(255, 255, 255);
   z-index: 1000;
-  border-radius: 10px 0 0 10px;
   overflow-y: auto;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.4s ease-in-out, opacity 0.2s ease-in-out;
@@ -3210,39 +3243,85 @@ td img {
   visibility: hidden;
 }
 
+.close_popup{
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 7px;
+  color: #1b4f4a;
+
+}
+
 .edit_inv_cont.active,
-.view_inv_cont.active,
-.return_inv_cont.active {
+.view_inv_cont.active{
   right: 0;
   opacity: 1;
   visibility: visible;
 }
 
-.dashboard_header {
+.dashboard_header_inv{
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
   background-color: #f4f4f4;
 }
 
-.close_popup {
-  background: none;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-  color: #353c4a;
-  position: absolute;
-  right: 15px;
-  top: 10px;
+.dashboard_name_inv{
+  font-size: 15px;
+  font-weight: 400;
+  color: #1b4f4a;
+  margin-left: 10px;
+}
+.view_inv_feild_cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+.view_inv_img_item_detail_feild{
+  width: 95%;
+  height: 160px;
+  border: 1px solid #d8d6de;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-  /* Total old god exchange */
+.View-inv-img{
+  width: 170px;
+  height: 90%;
+  border-radius: 6px;
+  border: 1px solid #d8d6de;
+  margin-left: 5px;
+}
+.view_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.view_item_detail_cont_boder{
+  height: 90%;
+  border: 0.8px solid #d8d6de;
+}
+.view_item_detail_cont{
+  width: 200px;
+  height: 95%;
+}
+
+
+/* Total old god exchange */
 
   .gold-popup {
     position: fixed;
     top: 0;
-    right: -600px;
+    right: -650px;
     width: 600px;
     height: 100vh;
     background: white;
@@ -3337,7 +3416,8 @@ td img {
     top: 0;
 }
 
-.goldassign-btn{width: 120px;
+.goldassign-btn , .silverassign-btn , .stoneassign-btn{
+  width: 120px;
   height: 35px;
   background-color: #f4f4f4;
   color: #667084;
@@ -3346,11 +3426,13 @@ td img {
   font-weight: 500;
   border: none;
   cursor: pointer;
+  gap: 6px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #dfdfdf;
+  margin-right: 10px;
 }
 .form ,.to{
   display: flex;
@@ -3394,16 +3476,22 @@ td img {
     margin-left: 10px;
 }
 
-.gold-load-more {
-    height: 40px;
-    width: 140px;
-    margin-right: 10px;
-    border-radius: 6px;
-    outline: none;
-    border: 1px solid #d9d6de;
+.view_all_monthly_sale , .gold-load-more , .silver-load-more , .stone-load-more{
+  height: 40px;
+  width: 120px;
+  margin-right: 10px;
+  background-color: #e1edf5;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #79a7c7;
+  color: #39749e;
 }
 
-#goldassign{margin-right: 7px;}
+#goldassign , #silverassign , #stoneassign{
+  position: relative;
+  top: 1.3px;
+  font-size: 14px;
+}
 
 /* assign pop up */
 
@@ -3575,7 +3663,7 @@ td img {
 .silver-popup {
   position: fixed;
   top: 0;
-  right: -600px;
+  right: -650px;
   width: 600px;
   height: 100vh;
   background: white;
@@ -3671,22 +3759,6 @@ gap: 10px;
   top: 0;
 }
 
-.silverassign-btn {
-width: 120px;
-height: 35px;
-background-color: #f4f4f4;
-color: #667084;
-padding: 10px 10px;
-font-size: 12px;
-font-weight: 500;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-display: flex;
-justify-content: center;
-align-items: center;
-border: 1px solid #dfdfdf;
-}
 
 .form, .to {
 display: flex;
@@ -3728,19 +3800,6 @@ gap: 4px;
   border-radius: 6px;
   background-color: #ecfdf3;
   margin-left: 10px;
-}
-
-.silver-load-more {
-  height: 40px;
-  width: 140px;
-  margin-right: 10px;
-  border-radius: 6px;
-  outline: none;
-  border: 1px solid #d9d6de;
-}
-
-#silverassign {
-  margin-right: 7px;
 }
 
 /*Silver Assign Modal */
@@ -3918,7 +3977,7 @@ border: none;
 .stone-popup {
   position: fixed;
   top: 0;
-  right: -600px;
+  right: -650px;
   width: 600px;
   height: 100vh;
   background: white;
@@ -4015,22 +4074,6 @@ border: none;
   top: 0;
 }
 
-.stoneassign-btn {
-  width: 120px;
-  height: 35px;
-  background-color: #f4f4f4;
-  color: #667084;
-  padding: 10px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #dfdfdf;
-}
 
 .form, .to {
   display: flex;
@@ -4072,19 +4115,6 @@ border: none;
   border-radius: 6px;
   background-color: #ecfdf3;
   margin-left: 10px;
-}
-
-.stone-load-more {
-  height: 40px;
-  width: 140px;
-  margin-right: 10px;
-  border-radius: 6px;
-  outline: none;
-  border: 1px solid #d9d6de;
-}
-
-#stoneassign {
-  margin-right: 7px;
 }
 
 /* Assign Modal */
