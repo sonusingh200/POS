@@ -233,7 +233,7 @@
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
           </span>
         </div>
-        <div class="sale_box total_profit" onclick="openPopup('stonePopup')">
+        <div class="sale_box total_profit" onclick="openPopup('returnInvoicePopup')">
           <span class="sale_tittle">Return Invoice</span>
           <div class="sale_l_icon">
             <img src="/image/product-return.png" alt="" class="pos-ico">
@@ -242,7 +242,7 @@
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
           </span>
         </div>
-        <div class="sale_box total_profit" onclick="openPopup('stonePopup')">
+        <div class="sale_box total_profit" onclick="openPopup('deleteInvoicePopup')">
           <span class="sale_tittle">Delete Invoice</span>
           <div class="sale_l_icon">
             <img src="/image/file.png" alt="" class="pos-ico">
@@ -251,7 +251,7 @@
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
           </span>
         </div>
-        <div class="sale_box total_profit" onclick="openPopup('stonePopup')">
+        <div class="sale_box total_profit" onclick="openPopup('cancelInvoicePopup')">
           <span class="sale_tittle">Cancel Invoice</span>
           <div class="sale_l_icon">
             <img src="/image/reject.png" alt="" class="pos-ico">
@@ -260,7 +260,7 @@
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
           </span>
         </div>
-        <div class="sale_box total_profit" onclick="openPopup('stonePopup')">
+        <div class="sale_box total_profit" onclick="openPopup('dueInvoicePopup')">
           <span class="sale_tittle">Due Invoice</span>
           <div class="sale_l_icon">
             <img src="/image/cancelled.png" alt="" class="pos-ico">
@@ -1452,7 +1452,7 @@
             </div>
             <span class="view_item_detail_cont_boder"></span>
             <div class="view_item_detail_cont">
-              
+
             </div>
           </div>
         </div>
@@ -1650,7 +1650,7 @@
                 <input type="date" id="goldToDate">
               </div>
             </div>
-            <button class="goldassign-btn"><i class="fi fi-rr-restock" id="goldassign"></i>Assign
+            <button class="goldassign-btn" id="goldassign"><i class="fi fi-rr-restock" id="goldassign"></i>Assign
               Item</button>
           </div>
 
@@ -1871,7 +1871,7 @@
                 <input type="date" id="silverToDate">
               </div>
             </div>
-            <button class="silverassign-btn">
+            <button class="silverassign-btn" id="silverassign">
               <i class="fi fi-rr-restock" id="silverassign"></i> Assign Item
             </button>
           </div>
@@ -2104,7 +2104,7 @@
                 <input type="date" id="stoneToDate">
               </div>
             </div>
-            <button class="stoneassign-btn">
+            <button class="stoneassign-btn" id="stoneassign">
               <i class="fi fi-rr-restock" id="stoneassign"></i> Assign Item
             </button>
           </div>
@@ -2316,6 +2316,569 @@
           </div>
         </div>
       </div>
+
+
+      <!-- return invoice pop up -->
+
+      <div class="card-right-popup" id="returnInvoicePopup">
+        <div class="card-popup-header">
+          <span class="monthly_return_title">
+            Return Invoice
+          </span>
+          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+        </div>
+        <div class="card-popup-content">
+          <div class="filter_monthly_return">
+            <label for="returnFromDate">From:</label>
+            <input type="date" id="returnFromDate">
+
+            <label for="returnToDate">To:</label>
+            <input type="date" id="returnToDate">
+          </div>
+          <div class="scroll_monthly_return">
+            <table class="monthly_return_table">
+              <thead>
+                <tr>
+                  <th>Return Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Amount (₹)</th>
+                </tr>
+              </thead>
+              <tbody class="monthly_return_table_body">
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+                <tr class="monthly_return_table_row">
+                  <td>28-02-2025</td>
+                  <td>RET0001</td>
+                  <td>Aman Singh</td>
+                  <td>Gold Ring</td>
+                  <td>30,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monthly_scroll_bottom">
+            <div class="total_amount_r">
+              <span>Total Amount : ₹30,000</span>
+            </div>
+            <button class="view_all_monthly_return">Load More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete invoice Pop up -->
+
+
+      <div class="card-right-popup" id="deleteInvoicePopup">
+        <div class="card-popup-header">
+          <span class="monthly_delete_title">
+            Delete Invoice
+          </span>
+          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+        </div>
+        <div class="card-popup-content">
+          <div class="filter_monthly_delete">
+            <label for="deleteFromDate">From:</label>
+            <input type="date" id="deleteFromDate">
+
+            <label for="deleteToDate">To:</label>
+            <input type="date" id="deleteToDate">
+          </div>
+          <div class="scroll_monthly_delete">
+            <table class="monthly_delete_table">
+              <thead>
+                <tr>
+                  <th>Delete Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Amount (₹)</th>
+                </tr>
+              </thead>
+              <tbody class="monthly_delete_table_body">
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_delete_table_row">
+                  <td>28-02-2025</td>
+                  <td>DEL0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monthly_scroll_bottom">
+            <div class="total_amount_d">
+              <span>Total Amount : ₹75,000</span>
+            </div>
+            <button class="view_all_monthly_delete">Load More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancel Invoice Pop Up -->
+
+
+      <div class="card-right-popup" id="cancelInvoicePopup">
+        <div class="card-popup-header">
+          <span class="monthly_cancel_title">Cancel Invoice</span>
+          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+        </div>
+        <div class="card-popup-content">
+          <div class="filter_monthly_cancel">
+            <label for="cancelFromDate">From:</label>
+            <input type="date" id="cancelFromDate">
+
+            <label for="cancelToDate">To:</label>
+            <input type="date" id="cancelToDate">
+          </div>
+          <div class="scroll_monthly_cancel">
+            <table class="monthly_cancel_table">
+              <thead>
+                <tr>
+                  <th>Cancel Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Amount (₹)</th>
+                </tr>
+              </thead>
+              <tbody class="monthly_cancel_table_body">
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_cancel_table_row">
+                  <td>28-02-2025</td>
+                  <td>CAN0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monthly_scroll_bottom">
+            <div class="total_amount_c">
+              <span>Total Amount : ₹75,000</span>
+            </div>
+            <button class="view_all_monthly_cancel">Load More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Due invoice Pop up -->
+
+      <div class="card-right-popup" id="dueInvoicePopup">
+        <div class="card-popup-header">
+          <span class="monthly_due_title">Due Invoice</span>
+          <i class="fi fi-rr-cross-small card-close-btn" onclick="closePopup()"></i>
+        </div>
+        <div class="card-popup-content">
+          <div class="filter_monthly_due">
+            <label for="dueFromDate">From:</label>
+            <input type="date" id="dueFromDate">
+
+            <label for="dueToDate">To:</label>
+            <input type="date" id="dueToDate">
+          </div>
+          <div class="scroll_monthly_due">
+            <table class="monthly_due_table">
+              <thead>
+                <tr>
+                  <th>Due Date</th>
+                  <th>Invoice No</th>
+                  <th>Customer Name</th>
+                  <th>Item Name</th>
+                  <th>Amount (₹)</th>
+                </tr>
+              </thead>
+              <tbody class="monthly_due_table_body">
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+                <tr class="monthly_due_table_row">
+                  <td>28-02-2025</td>
+                  <td>DUE0001</td>
+                  <td>Aman Singh</td>
+                  <td>Diamond</td>
+                  <td>25,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="monthly_scroll_bottom">
+            <div class="total_amount_d">
+              <span>Total Amount : ₹75,000</span>
+            </div>
+            <button class="view_all_monthly_due">Load More</button>
+          </div>
+        </div>
+      </div>
+
 
       <!-- import -->
       <div id="importDataModal" class="importdata-confirm-overlay">

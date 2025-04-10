@@ -100,43 +100,64 @@ document.addEventListener("DOMContentLoaded", function () {
   const cancelDelete = document.getElementById("cancelDelete");
   const actionButtons = document.querySelectorAll(".dropdown-btn");
 
-  actionButtons.forEach((btn) => {
-    btn.addEventListener("click", function (event) {
-      event.stopPropagation();
-      const dropdown = btn.nextElementSibling;
-      document.querySelectorAll(".dropdown-content").forEach((content) => {
-        if (content !== dropdown) {
-          content.style.display = "none";
+  if (deleteBtns.length > 0) {
+    deleteBtns.forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+          dropdown.style.display = "none";
+        });
+        if (deleteModal) {
+          deleteModal.style.display = "flex";
         }
       });
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     });
-  });
-  deleteBtns.forEach((btn) => {
-    btn.addEventListener("click", function (event) {
-      event.preventDefault();
-      document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
-        dropdown.style.display = "none";
+  }
+
+  if (confirmDelete) {
+    confirmDelete.addEventListener("click", function () {
+      alert("Invoice deleted!");
+      if (deleteModal) {
+        deleteModal.style.display = "none";
+      }
+    });
+  }
+
+  if (cancelDelete) {
+    cancelDelete.addEventListener("click", function () {
+      if (deleteModal) {
+        deleteModal.style.display = "none";
+      }
+    });
+  }
+
+  if (actionButtons.length > 0) {
+    actionButtons.forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        document.querySelectorAll(".dropdown-content").forEach((content) => {
+          if (content !== dropdown) {
+            content.style.display = "none";
+          }
+        });
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
       });
-      deleteModal.style.display = "flex";
     });
-  });
-  confirmDelete.addEventListener("click", function () {
-    alert("Invoice deleted!");
-    deleteModal.style.display = "none";
-  });
-  cancelDelete.addEventListener("click", function () {
-    deleteModal.style.display = "none";
-  });
+  }
+
   window.addEventListener("click", function (event) {
     if (event.target === deleteModal) {
-      deleteModal.style.display = "none";
+      if (deleteModal) {
+        deleteModal.style.display = "none";
+      }
     }
     document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
       dropdown.style.display = "none";
     });
   });
 });
+
 
 // Total sale calander
 
@@ -271,8 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-
-
 // POS create invoice popup and actions
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -388,7 +407,6 @@ function closePopup() {
 
 
 // Import
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const importDataBtns = document.querySelectorAll(".importdataBtn");

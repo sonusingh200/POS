@@ -2914,7 +2914,7 @@ td img {
   position: fixed;
   top: 0;
   right: -450px;
-  width: 420px;
+  width: 421px;
   height: 100vh;
   background: white;
   border-left: 2px solid #ddd;
@@ -3803,6 +3803,7 @@ gap: 4px;
 }
 
 /*Silver Assign Modal */
+
 .silvermodal {
 display: none;
 position: fixed;
@@ -4285,4 +4286,437 @@ border: none;
 
 .stone-sale-table-row {
   border: none;
+}
+
+/* return invoice pop up */
+
+.monthly_return_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter_monthly_return {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.filter_monthly_return label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter_monthly_return input {
+  width: 140px;
+  height: 35px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+#month_return_filter {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+.total_amount_r {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #353c4a;
+  border: 1px solid #a6f4c5;
+  border-radius: 6px;
+  background-color: #ecfdf3;
+  margin-left: 10px;
+}
+
+.scroll_monthly_return {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.monthly_return_table {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.monthly_return_table > th {
+  font-size: 12px;
+  font-weight: 400;
+  position: sticky;
+  top: 0;
+}
+
+.monthly_return_table_body tr > td {
+  height: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ecebeb;
+}
+
+.monthly_return_table_row {
+  height: 40px;
+}
+
+.monthly_scroll_bottom {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view_all_monthly_return {
+  height: 40px;
+  width: 140px;
+  margin-right: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d9d6de;
+}
+
+/* Delete invoice Pop up */
+
+.delete_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.delete_value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+.monthly_delete_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter_monthly_delete {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.filter_monthly_delete label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter_monthly_delete input {
+  width: 140px;
+  height: 35px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+#month_delete_filter {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+.scroll_monthly_delete {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.monthly_delete_table {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.monthly_delete_table > th {
+  font-size: 12px;
+  font-weight: 400;
+  position: sticky;
+  top: 0;
+}
+
+.monthly_delete_table_body tr > td {
+  height: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ecebeb;
+}
+
+.monthly_delete_table_row {
+  height: 40px;
+}
+
+.total_amount_d {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #353c4a;
+  border: 1px solid #f4c7a6;
+  border-radius: 6px;
+  background-color: #fdf3ec;
+  margin-left: 10px;
+}
+
+.view_all_monthly_delete {
+  height: 40px;
+  width: 140px;
+  margin-right: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d9d6de;
+}
+
+/* Cancel Invoice Pop up */
+
+.cancel_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cancel_value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.monthly_cancel_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter_monthly_cancel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.filter_monthly_cancel label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter_monthly_cancel input {
+  width: 140px;
+  height: 35px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+#month_cancel_filter {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+.scroll_monthly_cancel {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.monthly_cancel_table {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.monthly_cancel_table > th {
+  font-size: 12px;
+  font-weight: 400;
+  position: sticky;
+  top: 0;
+}
+
+.monthly_cancel_table_body tr > td {
+  height: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ecebeb;
+}
+
+.monthly_cancel_table_row {
+  height: 40px;
+}
+
+.total_amount_c {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #353c4a;
+  border: 1px solid #f4e2a6;
+  border-radius: 6px;
+  background-color: #fdfceb;
+  margin-left: 10px;
+}
+
+.view_all_monthly_cancel {
+  height: 40px;
+  width: 140px;
+  margin-right: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d9d6de;
+}
+
+/* Due invoice Pop up */
+
+.due_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.due_value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.monthly_due_title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter_monthly_due {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.filter_monthly_due label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter_monthly_due input {
+  width: 140px;
+  height: 35px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+#month_due_filter {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d8d6de;
+  color: #757575;
+  padding-left: 6px;
+}
+
+.scroll_monthly_due {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.monthly_due_table {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.monthly_due_table > th {
+  font-size: 12px;
+  font-weight: 400;
+  position: sticky;
+  top: 0;
+}
+
+.monthly_due_table_body tr > td {
+  height: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ecebeb;
+}
+
+.monthly_due_table_row {
+  height: 40px;
+}
+
+.total_amount_d {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #353c4a;
+  border: 1px solid #f4e2a6;
+  border-radius: 6px;
+  background-color: #fdfceb;
+  margin-left: 10px;
+}
+
+.view_all_monthly_due {
+  height: 40px;
+  width: 140px;
+  margin-right: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #d9d6de;
 }
