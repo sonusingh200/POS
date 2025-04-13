@@ -3421,193 +3421,53 @@ td img {
 
 /* Edit view return pop up */
 
-.edit_inv_cont,
-.view_inv_cont {
-  width: 450px;
+.edit_inv_cont {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -650px;
+  left: 0;
   background-color: rgb(255, 255, 255);
   z-index: 1000;
+  border-radius: 10px;
+  display: none;
   overflow-y: auto;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: right 0.4s ease-in-out, opacity 0.2s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
 }
 
-.close_popup {
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: bold;
-  margin-right: 7px;
-  color: #1b4f4a;
-
-}
-
-.edit_inv_cont.active,
-.view_inv_cont.active {
-  right: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.dashboard_header_inv {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f4f4f4;
-}
-
-.dashboard_name_inv {
-  font-size: 15px;
-  font-weight: 400;
-  color: #1b4f4a;
-  margin-left: 10px;
-}
-
-.view_inv_feild_cont {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.view_inv_img_item_detail_feild {
-  width: 95%;
-  height: 160px;
-  border: 1px solid #d8d6de;
-  border-radius: 6px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.View-inv-img {
-  width: 170px;
-  height: 90%;
-  border-radius: 6px;
-  border: 1px solid #d8d6de;
-  margin-left: 5px;
-}
-
-.view_img {
+.view_inv_cont {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.view_item_detail_cont_boder {
-  height: 90%;
-  border: 0.8px solid #d8d6de;
-}
-
-.view_item_detail_cont {
-  width:50%;
-  height: 95%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+  border-radius: 10px;
+  display: none;
+  overflow-y: auto;
 }
-.view_item_detail{
-  width: 100%;
-  height: 20px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 7px;
-}
-.view_item_detail_text{
-  font-size: 12px; 
-  display: block;
+
+.ret_inv_cont {
   width: 100%;
   height: 100%;
-  font-weight: 400;
-  color: #353c4a;
-  text-align: left;
-}
-.other-view-item-container{
-  margin-top: 10px;
-  width: 95%;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 6px;
-  border: 1px solid #d8d6de;
-  overflow: hidden;
-
-}
-.scroll_View_inv{
-  width: 100%;
-  max-height: 900px;
-  overflow: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+  border-radius: 10px;
+  display: none;
+  overflow-y: auto;
 }
 
 
-.view-customer-det{
-  width: 95%;
-  height: 500px;
-  border: 1px solid #d8d6de;
-  border-radius: 6px;
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-.view-customer-det-tittle{
-  width: 100%;
-  height: 40px;
-  background-color: #e1edf5;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  display: flex;
-  align-items: center;
-}
-.cutomer_dtl_text{
-  font-size: 13px;
-  font-weight: 500;
-  color: #353c4a;
-  margin-left: 10px;
-}
-.view_custmr_detail_cont{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 10px;
-  gap: 5px;
-}
-.cstmr_dtl_inp{
-  width: 98%;
-  height: 40px;
-  border-radius: 6px;
-  background-color:#f0f0f0;
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 400;
-  color: #353c4a;
-  text-align: left;
-  padding-left: 10px;
-  border: 1px solid #d8d6de;
-}
+
 
 /* Total old god exchange */
 
@@ -5048,3 +4908,7 @@ td img {
   outline: none;
   border: 1px solid #d9d6de;
 }
+
+
+
+

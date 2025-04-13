@@ -292,82 +292,40 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-// POS create invoice popup and actions
-
-document.addEventListener("DOMContentLoaded", function () {
-  const createButton = document.getElementById("Create_Sale_inv");
-  const editButtons = document.querySelectorAll(".edit-item-button");
-  const viewButtons = document.querySelectorAll(".custom-view-button");
-  const createPopup = document.getElementById("create-invoice-popup");
-  const editPopup = document.getElementById("edit-invoice-popup");
-  const viewPopup = document.getElementById("view-invoice-popup");
-  const closeCreateButton = document.getElementById("close-create-popup");
-  const closeEditButton = document.getElementById("close-edit-popup");
-  const closeViewButton = document.getElementById("close-view-popup");
-
-  function openPopup(popup) {
-    popup.style.right = "0";
-  }
-
-  function closePopup(popup) {
-    popup.style.right = "-650px";
-  }
-
-  createButton?.addEventListener("click", function (event) {
-    event.preventDefault();
-    openPopup(createPopup);
-  });
-
-  closeCreateButton?.addEventListener("click", () => {
-    closePopup(createPopup);
-  });
-
-  editButtons.forEach(button => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      openPopup(editPopup);
-    });
-  });
-
-  closeEditButton?.addEventListener("click", () => {
-    closePopup(editPopup);
-  });
-
-  viewButtons.forEach(button => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      openPopup(viewPopup);
-    });
-  });
-
-  closeViewButton?.addEventListener("click", () => {
-    closePopup(viewPopup);
-  });
-});
 
 //  create invoice popup
 
 document.addEventListener("DOMContentLoaded", function () {
   const createSaleBtn = document.getElementById("Create_Sale_inv");
   const createInvoicePopup = document.querySelector(".create_inv_cont");
-  const backButton = document.querySelector(".back_icon");
+  const backButtons = document.querySelectorAll(".back_icon");
 
   function showCreateInvoicePopup() {
-    createInvoicePopup.style.display = "flex";
+    if (createInvoicePopup) {
+      createInvoicePopup.style.display = "flex";
+    }
   }
 
-  function hideCreateInvoicePopup() {
-    createInvoicePopup.style.display = "none";
+  function hideInvoicePopups() {
+    const popups = document.querySelectorAll(".create_inv_cont, .edit_inv_cont, .view_inv_cont, .ret_inv_cont");
+    popups.forEach(popup => {
+      popup.style.display = "none";
+    });
   }
 
-  createSaleBtn.addEventListener("click", function () {
-    showCreateInvoicePopup();
-  });
+  if (createSaleBtn) {
+    createSaleBtn.addEventListener("click", function () {
+      showCreateInvoicePopup();
+    });
+  }
 
-  backButton.addEventListener("click", function () {
-    hideCreateInvoicePopup();
+  backButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      hideInvoicePopups();
+    });
   });
 });
+
 
 // Invoice History
 
@@ -434,48 +392,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target === importDataModal) {
       importDataModal.style.display = "none";
     }
-  });
-});
-// edit view return pop up
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll("#Edit_Invoice_btn, #View_Invoice_btn, #Return_Invoice_btn");
-  const popups = {
-    "Edit_Invoice_btn": document.getElementById("edit_invoice_popup"),
-    "View_Invoice_btn": document.getElementById("view_invoice_popup"),
-    "Return_Invoice_btn": document.getElementById("return_invoice_popup")
-  };
-
-  function showPopup(popup) {
-    document.querySelectorAll(".edit_inv_cont, .view_inv_cont, .return_inv_cont")
-      .forEach(p => p.classList.remove("active"));
-
-    if (popup) popup.classList.add("active");
-  }
-
-  function closePopup(popupId) {
-    const popup = document.getElementById(popupId);
-    if (popup) {
-      popup.classList.remove("active");
-    }
-  }
-
-  buttons.forEach(button => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      const popup = popups[button.id];
-      showPopup(popup);
-    });
-  });
-
-  document.querySelectorAll(".close_popup").forEach(button => {
-    button.addEventListener("click", function () {
-      const popup = this.closest(".edit_inv_cont, .view_inv_cont, .return_inv_cont");
-      if (popup) {
-        popup.classList.remove("active");
-      }
-    });
   });
 });
 
@@ -660,3 +576,42 @@ populateMonthYear(startMonthSelect, startYearSelect, selectedStart, renderAllCal
 populateMonthYear(endMonthSelect, endYearSelect, selectedEnd, renderAllCalendars);
 updateRangeDisplay();
 renderAllCalendars();
+
+
+// Edit invoice Pop up and View  and return invoice Pop up 
+
+document.querySelectorAll(".edit_invoice_btn").forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const editPanel = document.querySelector(".edit_inv_cont");
+    if (editPanel.style.display === "none" || editPanel.style.display === "") {
+      editPanel.style.display = "flex";
+    } else {
+      editPanel.style.display = "none";
+    }
+  });
+});
+document.querySelectorAll(".view_invoice_btn").forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const viewPanel = document.querySelector(".view_inv_cont");
+    if (viewPanel.style.display === "none" || viewPanel.style.display === "") {
+      viewPanel.style.display = "flex";
+    } else {
+      viewPanel.style.display = "none";
+    }
+  });
+});
+
+document.querySelectorAll(".return_invoice_btn").forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const returnPanel = document.querySelector(".ret_inv_cont");
+    if (returnPanel.style.display === "none" || returnPanel.style.display === "") {
+      returnPanel.style.display = "flex";
+    } else {
+      returnPanel.style.display = "none";
+    }
+  });
+});
+
