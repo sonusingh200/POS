@@ -248,7 +248,8 @@
             <img src="/image/file.png" alt="" class="pos-ico">
           </div>
           <span class="sale_value">
-            <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
+            <i class="fi fi-sc-receipt" id="sale_ico_inv"></i>
+            60
           </span>
         </div>
         <div class="sale_box total_profit" onclick="openPopup('cancelInvoicePopup')">
@@ -257,13 +258,14 @@
             <img src="/image/reject.png" alt="" class="pos-ico">
           </div>
           <span class="sale_value">
-            <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
+            <i class="fi fi-sc-receipt" id="sale_ico_inv"></i>
+            30
           </span>
         </div>
         <div class="sale_box total_profit" onclick="openPopup('dueInvoicePopup')">
           <span class="sale_tittle">Due Invoice</span>
           <div class="sale_l_icon">
-            <img src="/image/cancelled.png" alt="" class="pos-ico">
+            <img src="/image/due-date.png" alt="" class="pos-ico">
           </div>
           <span class="sale_value">
             <i class="fi fi-bs-indian-rupee-sign" id="sale_ico"></i>1,50,000
@@ -280,14 +282,23 @@
               <div class="tooltip-arrow"></div>
             </div>
           </div>
-          <div class="filter-container">
+          <div class="filter-container_inv">
             <i class="fi fi-rr-filter" id="filter_inv"></i>
             <select id="invoice-type" class="ddi">
-              <option value="" disabled selected>Select Invoice Type</option>
-              <option value="retail">Sale Invoice</option>
-              <option value="wholesale">Cancel Invoice</option>
-              <option value="returns">Return Invoice</option>
+              <option value="" disabled selected>Select Item Type</option>
+              <option value="retail">Gold Item</option>
+              <option value="wholesale">Silver Item</option>
+              <option value="returns">Stone Item</option>
+              <option value="returns">Gold (Raw metal)</option>
+              <option value="returns">Silver (Raw metal)</option>
             </select>
+          </div>
+          <div class="custom-range-container date-picker-wrapper">
+            <div class="custom-range-btn" id="togglePicker">
+              <i class="fi fi-rr-calendar-lines calendar-icon"></i>
+              <span class="custom-range-text">Custom Range</span>
+              <span class="cus-current-date" id="selected-range">Oct 12 - Nov 10</span>
+            </div>
           </div>
         </div>
         <div class="sel_option_sec">
@@ -1161,7 +1172,7 @@
                 </div>
                 <div class="customer_input_feild">
                   <div class="customer_name_f">
-                    <label for="customer_name_titl">Customer Name</label>
+                    <label for="customer_name_titl">Customer Name</label>                    
                     <input type="text" id="customer_name" class="customer_name_inp" placeholder="Enter Customer Name">
                   </div>
                   <div class="customer_phone">
@@ -1351,7 +1362,12 @@
                 <div class="add_item_invoice">
                   <div class="add_invoice_detail">
                     <label class="add_item_tiitle">Item Name</label>
-                    <input type="text" id="customer_name" class="add_item_inp" placeholder="Add Item">
+                    <div class="add_item_inv">
+                      <input type="text" id="add_item_inp" class="add_item_inp" placeholder="Add Item">
+                      <div class="add_item_inp_ico">
+                        <i class="fi fi-rr-search add_item_inp_ico_img"></i>
+                      </div>
+                    </div>
                   </div>
                   <div class="add_invoice_detail">
                     <label class="add_item_tiitle">Item Location</label>
@@ -1367,7 +1383,6 @@
                       <option value="">Silver</option>
                       <option value="">Stone</option>
                     </select>
-
                   </div>
                   <div class="customer_phone">
                     <label class="add_item_tiitle">Item Weight</label>
@@ -1452,7 +1467,93 @@
             </div>
             <span class="view_item_detail_cont_boder"></span>
             <div class="view_item_detail_cont">
-
+              <div class="view_item_detail">
+                <span class="view_item_detail_text">Invoice Date : 18-03-2025</span>
+                <span class="view_item_detail_text">Invoice Number : INV0012</span>
+                <span class="view_item_detail_text">Item Name : Oval Gold Ring</span>
+                <span class="view_item_detail_text">Item Code : OVGR2234</span>
+                <span class="view_item_detail_text">Item Type : Gold</span>
+                <span class="view_item_detail_text">Item Weight: 0.30Gm</span>
+                <span class="view_item_detail_text"></span>
+              </div>
+            </div>
+          </div>
+          <div class="other-view-item-container">
+            <div class="scroll_View_inv">
+              <div class="view-customer-det">
+                <div class="view-customer-det-tittle">
+                  <h2 class="cutomer_dtl_text">Customer Details</h2>
+                </div>
+                <div class="view_custmr_detail_cont">
+                  <div class="cstmr_dtl_inp">
+                    Customer Name :  Sonu Singh
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                     Phone Number :  6290166020
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                     Email Address :  sonusinghcom13@gmail.com
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Date Of Birth :  01-01-1990
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Address : 123, Main Street, City, State, 123456
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    City : Kolkata
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    State : Westbengal
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Pin : 700001
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    PAN Number : ABCDE1234F
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Gst Number : ABCD1234EZKLIU
+                  </div>
+                </div>
+              </div>
+              <div class="view-customer-det">
+                <div class="view-customer-det-tittle">
+                  <h2 class="cutomer_dtl_text">Exchange Details</h2>
+                </div>
+                <div class="view_custmr_detail_cont">
+                  <div class="cstmr_dtl_inp">
+                     Item Name : Ring
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                     Item Weight :  0.30Gm
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                      Item Type :  Gold
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Date Of Birth :  01-01-1990
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Address : 123, Main Street, City, State, 123456
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    City : Kolkata
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    State : Westbengal
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Pin : 700001
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    PAN Number : ABCDE1234F
+                  </div>
+                  <div class="cstmr_dtl_inp">
+                    Gst Number : ABCD1234EZKLIU
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1469,7 +1570,6 @@
           <div class="filter_monthly_sale">
             <label for="fromDate">From:</label>
             <input type="date" id="fromDate">
-
             <label for="toDate">To:</label>
             <input type="date" id="toDate">
           </div>
@@ -2349,70 +2449,70 @@
               <tbody class="monthly_return_table_body">
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
                 </tr>
                 <tr class="monthly_return_table_row">
                   <td>28-02-2025</td>
-                  <td>RET0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Gold Ring</td>
                   <td>30,000</td>
@@ -2489,105 +2589,105 @@
               <tbody class="monthly_delete_table_body">
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
                 </tr>
                 <tr class="monthly_delete_table_row">
                   <td>28-02-2025</td>
-                  <td>DEL0001</td>
+                  <td>INV01024</td>
                   <td>Aman Singh</td>
                   <td>Diamond</td>
                   <td>25,000</td>
@@ -2900,12 +3000,12 @@
           </div>
           <div class="rule_cont">
             <span class="rules_tittle">Import tips:</span>
-            <ul class="rules">
-              <li>To avoid error in import process, please read the instruction in help sheet which is
+            <ul class="rules"> 
+              <li><span class="star_mark">*</span>To avoid error in import process, please read the instruction in help sheet which is
                 given in sample
                 file
                 and prepare file for import accordingly.</li>
-              <li>
+              <li><span class="star_mark">*</span>
                 If you have files in other formats, you can convert it to an accepted file format
                 using any
                 online/offline
@@ -2948,7 +3048,67 @@
           </div>
         </div>
       </div>
+      <!-- Custom date range selector -->
 
+      <div class="calendar-popup" id="calendar-popup">
+        <div class="calendars">
+          <div class="calendar" id="start-calendar">
+            <div class="calendar-header">
+              <span>Start Date</span>
+              <div class="month-selectors">
+                <select id="start-month"></select>
+                <select id="start-year"></select>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Su</th>
+                  <th>Mo</th>
+                  <th>Tu</th>
+                  <th>We</th>
+                  <th>Th</th>
+                  <th>Fr</th>
+                  <th>Sa</th>
+                </tr>
+              </thead>
+              <tbody id="start-dates"></tbody>
+            </table>
+          </div>
+          <div class="calendar" id="end-calendar">
+            <div class="calendar-header">
+              <span>End Date</span>
+              <div class="month-selectors">
+                <select id="end-month"></select>
+                <select id="end-year"></select>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Su</th>
+                  <th>Mo</th>
+                  <th>Tu</th>
+                  <th>We</th>
+                  <th>Th</th>
+                  <th>Fr</th>
+                  <th>Sa</th>
+                </tr>
+              </thead>
+              <tbody id="end-dates"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="range-options">
+          <button onclick="quickSet('today')">Today</button>
+          <button onclick="quickSet('yesterday')">Yesterday</button>
+          <button onclick="quickSet('last7')">Last 7 Days</button>
+          <button onclick="quickSet('last30')">Last 30 Days</button>
+          <button onclick="quickSet('entire')">Entire Duration</button>
+          <button class="active">Custom Range</button>
+          <button onclick="toggleCompareMode()">Compare Ranges</button>
+        </div>
+      </div>
       <!--pagination-->
       <div class="pagination">
         <button class="pagination-arrow" id="prevBtn" disabled><i class="fi fi-rr-angle-small-left"

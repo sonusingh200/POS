@@ -510,3 +510,153 @@ function closeStonePopup() {
   document.getElementById("stonePopup").style.right = "-600px";
 }
 
+// Custom date range selector
+
+const startDates = document.getElementById("start-dates");
+const endDates = document.getElementById("end-dates");
+const rangeDisplay = document.getElementById("selected-range");
+const calendarPopup = document.getElementById("calendar-popup");
+const togglePickerBtn = document.getElementById("togglePicker");
+const startMonthSelect = document.getElementById("start-month");
+const startYearSelect = document.getElementById("start-year");
+const endMonthSelect = document.getElementById("end-month");
+const endYearSelect = document.getElementById("end-year");
+let selectedStart = new Date();
+let selectedEnd = new Date();
+togglePickerBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  calendarPopup.classList.toggle("show");
+});
+function populateMonthYear(selectMonth, selectYear, selectedDate, onChangeCallback) {
+  selectMonth.innerHTML = '';
+  selectYear.innerHTML = '';
+  const currentYear = new Date().getFullYear();
+  for (let m = 0; m < 12; m++) {
+    const opt = document.createElement("option");
+    opt.value = m;
+    opt.text = new Date(0, m).toLocaleString("default", { month: "short" });
+    if (m === selectedDate.getMonth()) opt.selected = true;
+    selectMonth.appendChild(opt);
+  }
+  for (let y = currentYear - 10; y <= currentYear + 10; y++) {
+    const opt = document.createElement("option");
+    opt.value = y;
+    opt.text = y;
+    if (y === selectedDate.getFullYear()) opt.selected = true;
+    selectYear.appendChild(opt);
+  }
+  selectMonth.addEventListener("change", () => onChangeCallback());
+  selectYear.addEventListener("change", () => onChangeCallback());
+}
+function renderCalendar(container, selectedDate, isStart) {
+  container.innerHTML = "";
+  const year = selectedDate.getFullYear();
+  const month = selectedDate.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const lastDate = new Date(year, month + 1, 0).getDate();
+  const startDay = firstDay.getDay();
+  let day = 1;
+  let row;
+  for (let i = 0; i < 6; i++) {
+    row = document.createElement("tr");
+    let rowCompleted = false;
+    for (let j = 0; j < 7; j++) {
+      const cell = document.createElement("td");
+      if (i === 0 && j < startDay) {
+        cell.innerText = "";
+      }
+      else if (day > lastDate) {
+        cell.innerText = "";
+      }
+      else {
+        const currentDate = new Date(year, month, day);
+        cell.innerText = day;
+        if ((isStart && isSameDate(currentDate, selectedStart)) ||
+          (!isStart && isSameDate(currentDate, selectedEnd))) {
+          cell.classList.add("selected");
+        }
+        else if (currentDate > selectedStart && currentDate < selectedEnd) {
+          cell.classList.add("in-range");
+        }
+        cell.onclick = () => {
+          if (isStart) {
+            selectedStart = currentDate;
+            if (selectedStart > selectedEnd) selectedEnd = selectedStart;
+          }
+          else {
+            selectedEnd = currentDate;
+            if (selectedEnd < selectedStart) selectedStart = selectedEnd;
+          }
+          updateRangeDisplay();
+          renderAllCalendars();
+        };
+        day++;
+      }
+      if (cell.innerText !== "") rowCompleted = true;
+      row.appendChild(cell);
+    }
+    if (rowCompleted) {
+      container.appendChild(row);
+    }
+    if (day > lastDate) break;
+  }
+}
+function isSameDate(a, b) {
+  return a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate();
+}
+function updateRangeDisplay() {
+  const opts = { month: "short", day: "numeric" };
+  rangeDisplay.innerText = `${selectedStart.toLocaleDateString("en-US", opts)} - ${selectedEnd.toLocaleDateString("en-US", opts)}`;
+}
+function renderAllCalendars() {
+  selectedStart.setFullYear(parseInt(startYearSelect.value));
+  selectedStart.setMonth(parseInt(startMonthSelect.value));
+  selectedEnd.setFullYear(parseInt(endYearSelect.value));
+  selectedEnd.setMonth(parseInt(endMonthSelect.value));
+  renderCalendar(startDates, selectedStart, true);
+  renderCalendar(endDates, selectedEnd, false);
+}
+function quickSet(type) {
+  const today = new Date();
+  let start, end;
+  switch (type) {
+    case 'today':
+      start = end = new Date();
+      break;
+    case 'yesterday':
+      start = end = new Date(today.setDate(today.getDate() - 1));
+      break;
+    case 'last7':
+      end = new Date();
+      start = new Date();
+      start.setDate(end.getDate() - 6);
+      break;
+    case 'last30':
+      end = new Date();
+      start = new Date();
+      start.setDate(end.getDate() - 29);
+      break;
+    case 'entire':
+      start = new Date(today.getFullYear(), 0, 1);
+      end = new Date();
+      break;
+  }
+  selectedStart = start;
+  selectedEnd = end;
+  updateRangeDisplay();
+  renderAllCalendars();
+}
+function toggleCompareMode() {
+  alert("(Custom Ranges is not available right now)");
+}
+window.addEventListener("click", function (e) {
+  if (!calendarPopup.contains(e.target) && !togglePickerBtn.contains(e.target)) {
+    calendarPopup.classList.remove("show");
+  }
+});
+populateMonthYear(startMonthSelect, startYearSelect, selectedStart, renderAllCalendars);
+populateMonthYear(endMonthSelect, endYearSelect, selectedEnd, renderAllCalendars);
+updateRangeDisplay();
+renderAllCalendars();
