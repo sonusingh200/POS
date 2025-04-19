@@ -1372,14 +1372,14 @@
                     </div>
                   </div>
                   <div class="add_invoice_detail">
-                    <label class="add_item_tiitle">Item Location</label>
+                    <label class="add_item_tiitle">Location</label>
                     <select id="states" class="add_item_loc">
                       <option value="">Showroom</option>
                       <option value="">Vault</option>
                     </select>
                   </div>
                   <div class="add_invoice_detail">
-                    <label class="add_item_tiitle">Item Type</label>
+                    <label class="add_item_tiitle">Type</label>
                     <select id="states" class="add_item_loc">
                       <option value="">Gold</option>
                       <option value="">Silver</option>
@@ -1387,7 +1387,7 @@
                     </select>
                   </div>
                   <div class="customer_phone">
-                    <label class="add_item_tiitle">Item Weight</label>
+                    <label class="add_item_tiitle">Weight</label>
                     <div class="oldgold_exc_cont">
                       <input type="text" id="customer_phone" class="old_exchange_weight" placeholder="Weight">
                       <select id="states" class="old_exchange_weight_select">
@@ -1397,6 +1397,33 @@
                       </select>
                     </div>
                   </div>
+                  <div class="customer_phone">
+                    <label class="add_item_tiitle">Purity</label>
+                    <div class="oldgold_exc_cont">
+                      <input type="text" id="customer_phone" class="old_exchange_weight" placeholder="Weight">
+                      <select id="states" class="old_exchange_weight_select">
+                        <option value="">Gm</option>
+                        <option value="">Kg</option>
+                        <option value="">Mg</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!---last-->
+              <div class="total_tax_summary_cont">
+                <div class="total_tax_summary_cont_data">
+                  <div class="sumary_cont">
+                    
+                  </div>
+                   
+                   <div class="payment_recived_cont">
+
+                   </div>
+                   
+                   <div class="total_tax_cont">
+
+                   </div>
                 </div>
               </div>
             </div>
@@ -3712,28 +3739,31 @@
             </p>
             <p class="importdata_sub_tittle">
               <i class="fi fi-sr-exclamation" id="warning_importdata"></i>
-              Note : Maximum file size: 5 MB | File format: XLSX, XLS
+              Note : Maximum file size: 5 MB | File format: XLSX, <a href="#" class="sample_link">Sample file</a>
             </p>
           </div>
           <div class="rule_cont">
             <span class="rules_tittle">Import tips:</span>
             <ul class="rules">
-              <li><span class="star_mark">*</span>To avoid error in import process, please read the instruction in help
-                sheet which is
-                given in sample
-                file
-                and prepare file for import accordingly.</li>
               <li><span class="star_mark">*</span>
-                If you have files in other formats, you can convert it to an accepted file format
-                using any
-                online/offline
-                converter.
+              <p>
+                To avoid error in import process, please read the instruction in help
+                 sheet which is given in sample file and prepare file for  import accordingly.
+              </p>
+            </li>
+              <li>
+                <span class="star_mark">*</span>
+                <p>
+                  If you have files in other formats, you can convert it to an accepted file format using any online/offline converter.
+                </p>
               </li>
             </ul>
           </div>
           <div class="importdata-confirm-buttons">
             <div class="import_btn_cont">
-              <input type="file" name="" id="upload_file_btn">
+              <label for="createsummary-fileUpload" class="uploaddoc">
+                Click to upload or drag and drop<br /> XLSX Size up to 2MB
+              </label>
             </div>
             <div class="class_import_btncn">
               <button id="confirmImport">Import</button>

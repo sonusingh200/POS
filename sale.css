@@ -607,14 +607,14 @@ a {
   font-size: 13px;
 }
 
-#sale_ico{
+#sale_ico {
   font-size: 19px;
   position: relative;
   top: 2px;
   margin-left: 5px;
 }
 
-#sale_ico_inv{
+#sale_ico_inv {
   font-size: 19px;
   position: relative;
   top: 2px;
@@ -1617,7 +1617,7 @@ th {
 
 }
 
-.cus-current-date{
+.cus-current-date {
   font-size: 12px;
   font-weight: 500;
   cursor: default;
@@ -1638,7 +1638,7 @@ th {
   font-weight: 500;
   cursor: default;
   color: #757575;
-  
+
 }
 
 .calendar-popup {
@@ -1647,7 +1647,7 @@ th {
   left: 265px;
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: none;
   z-index: 1000;
 }
@@ -1682,7 +1682,8 @@ th {
   border-collapse: collapse;
 }
 
-.calendar th, .calendar td {
+.calendar th,
+.calendar td {
   text-align: center;
   padding: 5px;
   cursor: pointer;
@@ -1736,7 +1737,7 @@ th {
 
 /* Popup Container */
 
-.create_inv_cont  {
+.create_inv_cont {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1771,7 +1772,10 @@ th {
 
 }
 
-.create_inv_feild_cont, .edit_inv_field_cont , .view_inv_field_cont , .ret_inv_field_cont{
+.create_inv_feild_cont,
+.edit_inv_field_cont,
+.view_inv_field_cont,
+.ret_inv_field_cont {
   width: 100%;
   height: 95%;
   border-bottom-right-radius: 10px;
@@ -1908,7 +1912,7 @@ th {
 
 .customerdata_scroll_cont {
   width: 100%;
-  height: 900px;
+  height: 1100px;
   display: flex;
   gap: 15px;
   flex-direction: column;
@@ -2050,7 +2054,11 @@ th {
   color: #6e6b7c;
   font-size: 13px;
 }
-
+.old_exc_item_name::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
+}
 .oldgold_exc_cont {
   width: 120px;
   height: 40px;
@@ -2073,6 +2081,11 @@ th {
   border-bottom-left-radius: 6px;
   padding-left: 10px;
 
+}
+.old_exchange_weight::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .old_exchange_weight_select {
@@ -2099,6 +2112,11 @@ th {
   padding-left: 10px;
   outline: none;
 }
+.old_exc_tounch::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
+}
 
 .old_exc_rate {
   width: 140px;
@@ -2111,6 +2129,11 @@ th {
   padding-left: 10px;
   outline: none;
 }
+.old_exc_rate::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
+}
 
 .old_exc_amount {
   width: 170px;
@@ -2122,6 +2145,11 @@ th {
   border-radius: 6px;
   padding-left: 10px;
   outline: none;
+}
+.old_exc_amount::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .add_old_exc {
@@ -2201,7 +2229,8 @@ th {
   align-items: center;
   justify-content: center;
 }
-.add_item_inp_ico_img{
+
+.add_item_inp_ico_img {
   font-size: 17px;
   position: relative;
   top: 1.2px;
@@ -2240,8 +2269,38 @@ th {
   opacity: 0.7;
 
 }
+.total_tax_summary_cont{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total_tax_summary_cont_data{
+  width: 97%;
+  border: 1px solid #d9d6de;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
 
+.total_tax_cont , .payment_recived_cont{
+  width: 340px;
+  height: 90%;
+  border: 1px solid #d9d6de;
+  border-radius: 6px;
 
+}
+
+.sumary_cont{
+  width: 340px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
 
 
 
@@ -2989,7 +3048,9 @@ td img {
   color: #252525;
   text-align: left;
 }
-
+#close-delete-popup{
+  font-size: 19px;
+}
 #warning_delet {
   color: #f42c2b;
   font-size: 20px;
@@ -3021,7 +3082,7 @@ td img {
   width: 95%;
   height: 80px;
   background-color: #fff1e0;
-  font-size: 14px;
+  font-size: 13px;
   color: #667084;
   font-weight: 500;
   border-radius: 6px;
@@ -3051,7 +3112,7 @@ td img {
 #confirmDelete {
   width: 100px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   outline: none;
 }
@@ -3259,7 +3320,7 @@ td img {
   border-radius: 10px;
   text-align: center;
   width: 550px;
-  height: 320px;
+  height: 340px;
   border: 1px solid #dfdfdf;
   transform: scale(0.8);
   animation: popUp 0.3s ease-in-out forwards;
@@ -3365,10 +3426,15 @@ td img {
 }
 
 .rules li {
+  width: 95%;
+  display: flex;
   font-size: 12px;
   font-weight: 400;
   text-align: left;
   list-style-type: none;
+  position: relative;
+  text-indent: -1px;
+  line-height: 1.5;
 }
 
 .star_mark {
@@ -3376,22 +3442,28 @@ td img {
   font-size: 15px;
   position: relative;
   top: 3px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
 
 .import_btn_cont {
   height: 40px;
+  width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff0e0;
   border-radius: 6px;
   padding-left: 10px;
-  border: 1px solid #f5c451;
+  border: 1px dashed #f5c451;
 }
 
-
+.uploaddoc{
+  font-size: 11px;
+}
+.sample_link{
+  color: #2883f4;
+}
 .importdata-confirm-buttons {
   width: 95%;
   height: 60px;
@@ -3406,7 +3478,7 @@ td img {
 #confirmImport {
   width: 100px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   outline: none;
 }
@@ -4906,7 +4978,3 @@ td img {
   outline: none;
   border: 1px solid #d9d6de;
 }
-
-
-
-
