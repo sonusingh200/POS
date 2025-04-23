@@ -158,6 +158,74 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Cancel invoice confirmation popup and action dropdown close automatically when cancel invoice clicked 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cancelBtns = document.querySelectorAll(".cancelBtn");
+  const cancelModal = document.getElementById("cancelModal");
+  const confirmCancel = document.getElementById("confirmCancel");
+  const cancelCancel = document.getElementById("cancelCancel");
+  const closeCancelPopup = document.getElementById("close-cancel-popup");
+
+  if (cancelBtns.length > 0) {
+    cancelBtns.forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+          dropdown.style.display = "none";
+        });
+        if (cancelModal) {
+          cancelModal.style.display = "flex";
+        }
+      });
+    });
+  }
+
+  if (confirmCancel) {
+    confirmCancel.addEventListener("click", function () {
+      alert("Invoice cancelled!");
+      if (cancelModal) {
+        cancelModal.style.display = "none";
+      }
+    });
+  }
+
+  if (cancelCancel || closeCancelPopup) {
+    const closeFn = () => {
+      if (cancelModal) {
+        cancelModal.style.display = "none";
+      }
+    };
+    cancelCancel?.addEventListener("click", closeFn);
+    closeCancelPopup?.addEventListener("click", closeFn);
+  }
+
+  if (actionButtons.length > 0) {
+    actionButtons.forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const dropdown = btn.nextElementSibling;
+        document.querySelectorAll(".dropdown-content").forEach((content) => {
+          if (content !== dropdown) {
+            content.style.display = "none";
+          }
+        });
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      });
+    });
+  }
+
+  window.addEventListener("click", function (event) {
+    if (event.target === cancelModal) {
+      cancelModal.style.display = "none";
+    }
+    document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+      dropdown.style.display = "none";
+    });
+  });
+});
+
+
 
 // Total sale calander
 
@@ -615,3 +683,48 @@ document.querySelectorAll(".return_invoice_btn").forEach(button => {
   });
 });
 
+// Recover item
+
+const deleterecoverBtn = document.getElementById('deleterecover-main-btn');
+const deleterecoverOverlay = document.getElementById('deleterecover-popup-overlay');
+const deleterecoverCancel = document.getElementById('deleterecover-cancel-btn');
+const deleterecoverConfirm = document.getElementById('deleterecover-confirm-btn');
+const deleterecoverClose = document.getElementById('deleterecover-close-btn');
+const cancelrecoverBtn = document.getElementById('cancelrecover-main-btn');
+const cancelrecoverOverlay = document.getElementById('cancelrecover-popup-overlay');
+const cancelrecoverCancel = document.getElementById('cancelrecover-cancel-btn');
+const cancelrecoverConfirm = document.getElementById('cancelrecover-confirm-btn');
+const cancelrecoverClose = document.getElementById('cancelrecover-close-btn');
+
+deleterecoverBtn.onclick = () => {
+  deleterecoverOverlay.style.display = 'flex';
+};
+
+deleterecoverCancel.onclick = () => {
+  deleterecoverOverlay.style.display = 'none';
+};
+
+deleterecoverConfirm.onclick = () => {
+  alert('Recover action confirmed!');
+  deleterecoverOverlay.style.display = 'none';
+};
+
+deleterecoverClose.onclick = () => {
+  deleterecoverOverlay.style.display = 'none';
+};
+cancelrecoverBtn.onclick = () => {
+  cancelrecoverOverlay.style.display = 'flex';
+};
+
+cancelrecoverCancel.onclick = () => {
+  cancelrecoverOverlay.style.display = 'none';
+};
+
+cancelrecoverConfirm.onclick = () => {
+  alert('Recover action confirmed!');
+  cancelrecoverOverlay.style.display = 'none';
+};
+
+cancelrecoverClose.onclick = () => {
+  cancelrecoverOverlay.style.display = 'none';
+};
