@@ -1912,7 +1912,7 @@ th {
 
 .customerdata_scroll_cont {
   width: 100%;
-  height: 1100px;
+  height: 1500px;
   display: flex;
   gap: 15px;
   flex-direction: column;
@@ -2156,6 +2156,12 @@ th {
   width: 25px;
 }
 
+
+
+
+
+
+
 /*****/
 .add_item_cont {
   width: 97%;
@@ -2271,7 +2277,7 @@ th {
 }
 .total_tax_summary_cont{
   width: 100%;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2279,7 +2285,7 @@ th {
 .total_tax_summary_cont_data{
   width: 97%;
   border: 1px solid #d9d6de;
-  height: 450px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -2301,6 +2307,140 @@ th {
   display: flex;
   align-items: center;
 }
+
+.other_charges_cont{
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.other-charges-tittle{
+  width: 97%;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 19px;
+  margin-bottom: 5px;
+  color: #6d6b7d;
+
+}
+.other_charges_data{
+  border: 1px solid #d9d6de;
+  width: 95%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  gap: 10px;
+}
+
+.gst-cont{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.gstname{
+  width: 100px;
+  height: 30px;
+  border: 1px solid #d9d6de;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+.percent_box{
+  width: 100px;
+  height: 30px;
+  border: 1px solid #d9d6de;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+.percent_inp{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #6e6b7c;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding-left: 10px;
+}
+
+.percent_icon{
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #d9d6de;
+  background-color: 6e6b7c;
+}
+.percent_amt{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: none;
+  padding: 10px;
+}
+.percent_amt::placeholder{
+  color: #6e6b7c;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.total_tax_tittle{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  font-size: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #efefef;
+  font-size: 13px;
+ 
+}
+
+.making_charges{
+  width: 130px;
+  height: 30px;
+  border: 1px solid #d9d6de;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+.charges_box{
+  width: 60px;
+  height: 30px;
+  border: 1px solid #d9d6de;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcfcfc;
+}
+
+
+
+
+
+
 
 
 
